@@ -25,8 +25,8 @@ function module.keypress(enum: Enum.KeyCode, time: number)
   end
   local vim = module.getservice(game:GetService('VirtualInputManager')) -- better fucking pray ur executor is level 2+ >:)
   vim:SendKeyEvent(true, key, false, nil)
-	task.wait(time)
-	vim:SendKeyEvent(false, key, false, nil)
+  task.wait(time)
+  vim:SendKeyEvent(false, key, false, nil)
 end
 
 return module
