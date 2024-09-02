@@ -9,14 +9,14 @@ local LocalPlayer = Players.LocalPlayer
 local ParkGame = WS:FindFirstChild("MiniGames") or WS:WaitForChild("MiniGames")
 local GameplayGame = WS:FindFirstChild("Games") or WS:WaitForChild("Games")
 
-local Character = LocalPlayer or LocalPlayer.CharacterAdded:Wait()
+local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
 LocalPlayer.CharacterAdded:Connect(function(chr)
   Character = chr
 end)
 
 function module.getplrgame()
   local HRP = Character:FindFirstChild("HumanoidRootPart") or Character:WaitForChild("HumanoidRootPart")
-  if HRP.Anchored == true and ParkGame:FindFirstChild()[1] then -- haha funny check to make sure they arent just on a spot and they are actually fucking playing (what a fucking retarded check :skull:)
+  if HRP.Anchored == true and #ParkGame:GetChildren() > 0 then -- haha funny check to make sure they arent just on a spot and they are actually fucking playing (what a fucking retarded check :skull:)
     return
   end
   
@@ -25,6 +25,40 @@ function module.getplrgame()
     return
   end
   return found.Parent.Parent.Parent, found.Parent.Parent.Parent.Name
+end
+
+function module.findplayerwithball()
+  local game = module.getplrgame()
+  if not game then
+    return
+  end
+  local plrsingame = game.Replicated.Hitboxes
+  local plrwithball
+  for _, playerHitbox in ipairs(plrsingame:GetChildren()) do
+    local plr = Players[playerHitbox.Name]
+    if not plr or plr == LocalPlayer then
+      continue
+    end
+    local chr = plr.Character
+    if not chr then
+      continue
+    end
+    local hasFb = chr:FindFirstChild("FootballCircle",true)
+    if hasFb then
+      plrwithball = plr
+      break
+    end
+  end
+  return plrwithball
+end
+
+function module.findlineofscrim()
+  local game = module.getplrgame()
+  if not game then
+    return
+  end
+  
+  return game.Replicated.ScrimmageLine.ScrimmageWall
 end
 
 return module
