@@ -9,7 +9,17 @@ local LocalPlayer = Players.LocalPlayer
 local ParkGame = WS:FindFirstChild("MiniGames") or WS:WaitForChild("MiniGames")
 local GameplayGame = WS:FindFirstChild("Games") or WS:WaitForChild("Games")
 
+local Character = LocalPlayer or LocalPlayer.CharacterAdded:Wait()
+LocalPlayer.CharacterAdded:Connect(function(chr)
+  Character = chr
+end)
+
 function module.getplrgame()
+  local HRP = Character:FindFirstChild("HumanoidRootPart") or Character:WaitForChild("HumanoidRootPart")
+  if HRP.Anchored == true then -- haha funny check to make sure they arent just on a spot and they are actually fucking playing
+    return
+  end
+  
   local found = ParkGame:FindFirstChild(LocalPlayer.Name,true) or GameplayGame:FindFirstChild(LocalPlayer.Name,true)
   if not found then
     return
