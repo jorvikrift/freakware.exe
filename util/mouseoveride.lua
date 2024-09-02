@@ -19,7 +19,7 @@ local M = LP:GetMouse()
 local SG = Instance.new("ScreenGui")
 SG.Parent = CG
 SG.Name = "thefuckingmouse"
-SG.DisplayOrder = 1000
+SG.DisplayOrder = 9999999
 SG.IgnoreGuiInset = true
 
 local IL = Instance.new("ImageLabel")
