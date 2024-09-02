@@ -20,6 +20,8 @@ local function findUI()
 	end
 end
 
+findUI()
+
 -- // Indexing
 library.__index = library
 -- // Functions
