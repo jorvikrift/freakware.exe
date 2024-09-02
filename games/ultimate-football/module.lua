@@ -16,7 +16,7 @@ end)
 
 function module.getplrgame()
   local HRP = Character:FindFirstChild("HumanoidRootPart") or Character:WaitForChild("HumanoidRootPart")
-  if HRP.Anchored == true then -- haha funny check to make sure they arent just on a spot and they are actually fucking playing (what a fucking retarded check :skull:)
+  if HRP.Anchored == true and ParkGame:FindFirstChild()[1] then -- haha funny check to make sure they arent just on a spot and they are actually fucking playing (what a fucking retarded check :skull:)
     return
   end
   
