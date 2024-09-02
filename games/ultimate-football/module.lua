@@ -11,6 +11,9 @@ local GameplayGame = WS:FindFirstChild("Games") or WS:WaitForChild("Games")
 
 local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
 LocalPlayer.CharacterAdded:Connect(function(chr)
+  if not chr then
+      chr = LocalPlayer.CharacterAppearanceLoaded:Wait()
+  end
   Character = chr
 end)
 
@@ -28,11 +31,11 @@ function module.getplrgame()
 end
 
 function module.findplayerwithball()
-  local game = module.getplrgame()
-  if not game then
+  local gamee = module.getplrgame()
+  if not gamee then
     return
   end
-  local plrsingame = game.Replicated.Hitboxes
+  local plrsingame = gamee.Replicated.Hitboxes
   local plrwithball
   for _, playerHitbox in ipairs(plrsingame:GetChildren()) do
     local plr = Players[playerHitbox.Name]
@@ -53,12 +56,30 @@ function module.findplayerwithball()
 end
 
 function module.findlineofscrim()
-  local game = module.getplrgame()
-  if not game then
+  local gamee = module.getplrgame()
+  if not gamee then
     return
   end
   
-  return game.Replicated.ScrimmageLine.ScrimmageWall
+  return gamee.Replicated.ScrimmageLine.ScrimmageWall
+end
+
+function module.getendzones()
+  local gamee = module.getplrgame()
+  if not gamee then
+    return
+  end
+
+  return gamee.Local.Endzones.NorthEndzone, gamee.Local.Endzones.SouthEndzone
+end
+
+function module.getplayerhitbox()
+  local gamee = module.getplrgame()
+  if not gamee then
+    return
+  end
+  
+  return gamee.Replicated.Hitboxes[LocalPlayer.Name]
 end
 
 return module
