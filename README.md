@@ -1,2 +1,2 @@
 # freakware.exe
-the worst script ever
+the worst fucking script ever
