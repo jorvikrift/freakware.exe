@@ -1,5 +1,8 @@
 -- credits to whoever the fuck made this idk who made it
+while not game:IsLoaded() do task.wait() end
+
 local hahahaFuckYou = loadstring(game:HttpGet("https://raw.githubusercontent.com/jorvikrift/freakware.exe/main/util/mainmodule.lua"))()
+local mouse = loadstring(game:HttpGet("https://raw.githubusercontent.com/jorvikrift/freakware.exe/main/util/mouseoveride.lua"))()
 -- // Library Tables
 local library = {}
 local utility = {}
