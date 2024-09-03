@@ -13,9 +13,10 @@ local obelus = {
 local uis = hahahaFuckYou.getservice(game:GetService("UserInputService"))
 local cre = hahahaFuckYou.getservice(game:GetService("CoreGui"))
 
-local function findUI()
+function findUI()
 	if cre:FindFirstChild("obelus") then
 		cre["obelus"]:Destroy()
+		warn("fucking destroy it")
 		findUI()
 	end
 end
