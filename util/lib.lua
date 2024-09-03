@@ -11,13 +11,11 @@ getgenv().textService = Module.getservice(game:GetService("TextService"))
 getgenv().inputService = Module.getservice(game:GetService("UserInputService"))
 getgenv().tweenService = Module.getservice(game:GetService("TweenService"))
 
-warn("hmmm")
-
 if getgenv().library then
     getgenv().library:Unload()
 end
 
-local library = {design = getgenv().design == "kali" and "kali" or "uwuware", tabs = {}, draggable = true, flags = {}, title = Data["Name"] .. " | version " .. Data["Version"], open = false, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0, theme = {}, foldername = "freakware_cnfgs", fileext = ".txt"}
+local library = {design = getgenv().design == "kali" and "kali" or "uwuware", tabs = {}, draggable = true, flags = {}, title = UIData["Name"] .. " | version " .. UIData["Version"], open = false, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0, theme = {}, foldername = "freakware_cnfgs", fileext = ".txt"}
 getgenv().library = library
 
 --Locals
