@@ -14,7 +14,7 @@ local uis = hahahaFuckYou.getservice(game:GetService("UserInputService"))
 local cre = hahahaFuckYou.getservice(game:GetService("CoreGui"))
 
 for i, v in ipairs(cre:GetChildren()) do
-	if v.Name == "obelus" then
+	if v.Name == "obleus" then
 		v:Destroy()
 	end
 end
