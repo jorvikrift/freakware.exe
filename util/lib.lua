@@ -17,6 +17,7 @@ getgenv().tweenService = Module.getservice(game:GetService("TweenService"))
 
 if getgenv().library then
     getgenv().library:Unload()
+    getgenv().library = nil
 end
 
 local library = {design = getgenv().design == "kali" and "kali" or "uwuware", tabs = {}, draggable = true, flags = {}, title = Data["Name"] .. " | version " .. Data["Version"], open = false, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0, theme = {}, foldername = "freakware_cnfgs", fileext = ".txt"}
