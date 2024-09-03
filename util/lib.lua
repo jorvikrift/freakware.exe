@@ -1,3 +1,7 @@
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+
 local Module = loadstring(game:HttpGet("https://raw.githubusercontent.com/jorvikrift/freakware.exe/main/util/mainmodule.lua"))()
 local UIData = loadstring(game:HttpGet("https://raw.githubusercontent.com/jorvikrift/freakware.exe/main/util/data.lua"))()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/jorvikrift/freakware.exe/main/util/mouseoveride.lua"))()
@@ -13,6 +17,7 @@ getgenv().tweenService = Module.getservice(game:GetService("TweenService"))
 
 if getgenv().library then
     getgenv().library:Unload()
+    getgenv().library = nil
 end
 
 local library = {design = getgenv().design == "kali" and "kali" or "uwuware", tabs = {}, draggable = true, flags = {}, title = UIData["Name"] .. " | version " .. UIData["Version"], open = false, popup = nil, instances = {}, connections = {}, options = {}, notifications = {}, tabSize = 0, theme = {}, foldername = "fw" .. getgenv().freakwaregame .. "_cnfgs", fileext = ".txt"}
