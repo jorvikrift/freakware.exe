@@ -18,16 +18,15 @@ local M = LP:GetMouse()
 
 local SG = Instance.new("ScreenGui")
 SG.Parent = CG
-SG.Name = "thefuckingmouse"
+SG.Name = "mouse"
 SG.DisplayOrder = 9999999
 SG.IgnoreGuiInset = true
 
 local IL = Instance.new("ImageLabel")
 IL.Parent = SG
-IL.Name = "ok, i fucking lied. THIS is the fucking mouse.."
+IL.Name = "mouseimg"
 IL.Image = "rbxassetid://442141180"
 IL.Size = UDim2.new(0,55,0,55)
-IL.ImageColor3 = Color3.fromRGB(170, 85, 235)
 IL.BackgroundTransparency = 1
 IL.BorderSizePixel = 0
 IL.AnchorPoint = Vector2.new(0.5,0,0.5)
