@@ -13,15 +13,11 @@ local obelus = {
 local uis = hahahaFuckYou.getservice(game:GetService("UserInputService"))
 local cre = hahahaFuckYou.getservice(game:GetService("CoreGui"))
 
-function findUI()
-	if cre:FindFirstChild("obelus") then
-		cre["obelus"]:Destroy()
-		warn("fucking destroy it")
-		findUI()
+for i, v in ipairs(cre:GetChildren()) do
+	if v.Name == "obelus" then
+		v:Destroy()
 	end
 end
-
-findUI()
 
 -- // Indexing
 library.__index = library
